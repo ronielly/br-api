@@ -15,16 +15,16 @@ namespace BrApi.Services
             _brApi = brApi;
         }
 
-        public async Task<Response<List<BankResponse>>> GetAllBanks()
+        public async Task<Response<List<BankDto>>> GetAllBanks()
         {
             var banks = await _brApi.GetAllBanks();
-            return _mapper.Map<Response<List<BankResponse>>>(banks);
+            return _mapper.Map<Response<List<BankDto>>>(banks);
         }
 
-        public async Task<Response<BankResponse>> GetBankByCode(string code)
+        public async Task<Response<BankDto>> GetBankByCode(string code)
         {
             var bank = await _brApi.GetBankByCode(code);
-            return _mapper.Map<Response<BankResponse>>(bank);
+            return _mapper.Map<Response<BankDto>>(bank);
         }
     }
 }

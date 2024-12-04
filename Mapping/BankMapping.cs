@@ -9,8 +9,8 @@ namespace BrApi.Mapping
         public BankMapping()
         {
             CreateMap(typeof(Response<>), typeof(Response<>));
-            CreateMap<BankResponse, BankModel>();
-            CreateMap<BankModel, BankResponse>();
+            CreateMap<BankDto, BankModel>();
+            CreateMap<BankModel, BankDto>();
         }
     }
 }
